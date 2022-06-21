@@ -1,3 +1,4 @@
+
 import {createStore} from 'vuex';
 
 const store = createStore({
@@ -45,6 +46,17 @@ const store = createStore({
     mutations:{
         setChampionship(state, newValue){
             state.championship = newValue;
+        },
+        setClubName(state, newValue){
+            state.clubName = newValue;
+        }
+    },
+    actions:{
+        changeChampionship(context, value){
+            context.commit('setChampionship', value)
+        },
+        changeClubName(context, value){
+            context.commit('setClubName', value)
         }
     }
 })

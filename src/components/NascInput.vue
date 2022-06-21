@@ -1,5 +1,5 @@
 <template>
-    <input type="text" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" class="form-control" placeholder="Digite seu clube">
+    <input type="text" :value="modelValue" @input="this.$store.dispatch('changeClubName', $event.target.value)" class="form-control" placeholder="Digite seu clube">
 </template>
 
 <script>

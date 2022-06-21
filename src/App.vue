@@ -8,7 +8,7 @@
 import NascHeader from './components/NascHeader.vue'
 import NascFooter from './components/NascFooter.vue'
 import NascSection from './components/NascSection.vue'
-import {mapMutations} from 'vuex'
+import {mapActions} from 'vuex'
 import {mapGetters} from 'vuex'
 
 export default {
@@ -29,8 +29,8 @@ export default {
     })
   },
   methods:{
-    ...mapMutations({
-      changeChampionship: 'setChampionship'
+    ...mapActions({
+      changeChampionship: 'changeChampionship'
     }),
     changeComponent(value){
       let component;
