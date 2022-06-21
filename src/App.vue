@@ -8,6 +8,8 @@
 import NascHeader from './components/NascHeader.vue'
 import NascFooter from './components/NascFooter.vue'
 import NascSection from './components/NascSection.vue'
+import {mapMutations} from 'vuex'
+import {mapGetters} from 'vuex'
 
 export default {
   name: 'App',
@@ -18,14 +20,18 @@ export default {
   },
   data(){
     return{
-      championship: "Campeonato Brasileiro",
       currentSectionComponent: "NascSectionBanner"
     }
   },
+  computed:{
+    ...mapGetters({
+      championship: 'getChampionship'
+    })
+  },
   methods:{
-    changeChampionship(value){
-      this.championship = value;
-    },
+    ...mapMutations({
+      changeChampionship: 'setChampionship'
+    }),
     changeComponent(value){
       let component;
 

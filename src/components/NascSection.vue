@@ -23,6 +23,7 @@
 import NascSectionBanner from './NascSectionBanner.vue'
 import NascInput from './NascInput.vue'
 import { defineAsyncComponent } from 'vue'
+import {mapGetters} from 'vuex'
 
 const NascSectionNews = defineAsyncComponent(() =>
             import('./NascSectionNews.vue')
@@ -35,13 +36,13 @@ export default {
         NascInput
     },
     props:{
-        championship: String,
         currentComponent: String
     },
-    data(){
-        return{
-            myClub: "Nasc Software"
-        }
+    computed:{
+       ...mapGetters({
+            championship: 'getChapionship',
+            myClub: 'getClub'
+        })
     }
 }
 </script>
