@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="section-news">
         <div class="container">
             <NascSectionNewsIndividual v-for="notice in news" :key="notice.id"
                 :img-name="notice.img"
@@ -29,8 +29,8 @@ export default {
 }
 </script>
 
-<style scoped> /* scoped -> torna este style exclusivo desse component */ 
-    section{
+<style> /* scoped -> torna este style exclusivo desse component */ 
+    .section-news{
         padding: 50px 0;
         margin-top: 25px;
         background-color: #F37520;

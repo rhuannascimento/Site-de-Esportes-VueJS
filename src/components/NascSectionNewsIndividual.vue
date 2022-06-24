@@ -1,11 +1,11 @@
 <template>
-    <div class="row">
+    <div class="row div-news">
         <div class="col-3">
             <img :src="require('../assets/' + this.imgName)" :alt="imgInfo">
         </div>
 
         <div class="col-9">
-            <h2>{{newsTitle}}</h2>
+            <h2 @click="goToPage('/notice')" >{{newsTitle}}</h2>
             <p>
                 {{newsContent}}
             </p>
@@ -37,19 +37,24 @@ export default {
             type:String,
             required: true
         }
+    },
+    methods:{
+        goToPage(page){
+            this.$router.push(page);
+        }
     }
 
 }
 </script>
 
-<style scoped> /* scoped -> torna este style exclusivo desse component */ 
-    .row{
+<style>
+    .div-news{
         margin-bottom: 30px;
     }
-    img{
+    .div-news img{
         width: 100%;
     }
-    h2{
+    .div-news h2{
         cursor: pointer;
         color: white;
     }
