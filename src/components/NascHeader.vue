@@ -2,13 +2,15 @@
     <header>
         <div class="container">
             <nav class="navbar navbar-expand">
-                <a href="#"  @click.prevent="$emit('change-component', 'home')" class="link navbar-brand mr-auto">
+
+                <router-link to="/" class="link navbar-brand mr-auto">
                     <img src="./../assets/Logo.svg" class="img d-inline-block align-top" id="logo" alt="">Futebol Club
-                </a>
+                </router-link>
+
                 <div class="links mr-2">
 
-                    <a href="#" @click.prevent="$emit('change-component', 'home')" class="btn mr-5">Início</a>
-                    <a href="#" @click.prevent="$emit('change-component', 'news')" class="btn mr-5">Notícias</a>
+                    <router-link to="/" class="btn mr-5">Início</router-link>
+                    <router-link to="/news" class="btn mr-5">Notícias</router-link>
 
                     <select name="championship" id="select-championship" class="form-control" @change="$emit('select-championship', $event.target.value)">
                         <option value="">Selecione um Campeonato</option>

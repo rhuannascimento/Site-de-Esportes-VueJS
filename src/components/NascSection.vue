@@ -5,7 +5,9 @@
                 <h3>Você está vendo noticias do: {{championship}}</h3>
             </div>
         </div>
-        <component :is="currentComponent"></component>
+        
+        <router-view></router-view>
+
         <div class="container">
             <div class="row my-club mt-5">
                 <div class="col-6">
@@ -20,23 +22,12 @@
 </template>
 
 <script>
-import NascSectionBanner from './NascSectionBanner.vue'
 import NascInput from './NascInput.vue'
-import { defineAsyncComponent } from 'vue'
 import {mapGetters} from 'vuex'
-
-const NascSectionNews = defineAsyncComponent(() =>
-            import('./NascSectionNews.vue')
-) // fazendo o importe por aqui o componenet só sera carregado quando requesitado pelo usuátio, deixando assim o site mais leve
 
 export default {
     components:{
-        NascSectionBanner,
-        NascSectionNews,
         NascInput
-    },
-    props:{
-        currentComponent: String
     },
     computed:{
        ...mapGetters({

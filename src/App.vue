@@ -1,6 +1,6 @@
 <template>
     <NascHeader @select-championship="changeChampionship" @change-component="changeComponent"/>
-    <NascSection :current-component="currentSectionComponent" :championship="championship"/>
+    <NascSection :championship="championship"/>
     <NascFooter/>
 </template>
 
@@ -18,11 +18,6 @@ export default {
     NascFooter,
     NascSection
   },
-  data(){
-    return{
-      currentSectionComponent: "NascSectionBanner"
-    }
-  },
   computed:{
     ...mapGetters({
       championship: 'getChampionship'
@@ -31,23 +26,7 @@ export default {
   methods:{
     ...mapActions({
       changeChampionship: 'changeChampionship'
-    }),
-    changeComponent(value){
-      let component;
-
-      switch(value){
-        case 'home':
-        default:
-          component='NascSectionBanner'
-        break;
-
-        case 'news':
-          component='NascSectionNews'
-        break;
-      }
-
-      this.currentSectionComponent = component;
-    }
+    })
   }
 }
 </script>
