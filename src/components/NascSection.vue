@@ -12,7 +12,7 @@
                     <h2>Seu clube é {{myClub}}</h2>
                 </div>
                 <div class="col-6">
-                    <NascInput v-model="myClub"/>
+                    <NascInput  v-model="myClub"/>
                 </div>
             </div>
         </div>
