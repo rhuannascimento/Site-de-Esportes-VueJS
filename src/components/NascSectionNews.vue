@@ -2,6 +2,7 @@
     <section class="section-news">
         <div class="container">
             <NascSectionNewsIndividual v-for="notice in news" :key="notice.id"
+                :news-id="notice.id"
                 :img-name="notice.img"
                 :img-info="notice.imgInfor"
                 :news-title="notice.title"

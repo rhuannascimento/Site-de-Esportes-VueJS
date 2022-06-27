@@ -3,12 +3,12 @@
         <div class="container">
             <div class="row div-news">
                 <div class="col-6">
-                    <img src="../assets/news1.jpg" alt="">
+                    <img :src="require(`../assets/${notice.img}`)" :alt="notice.imgInfo">
                 </div>
                 <div class="col-6">
-                    <h2>Titulo</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse voluptates quas possimus debitis autem necessitatibus assumenda repellat animi nisi fuga exercitationem quasi iusto cum ad aliquam maxime recusandae, beatae eos?</p>
-                    <span>Data</span>
+                    <h2>{{notice.title}}</h2>
+                    <p>{{notice.content}}</p>
+                    <span>{{notice.date}}</span>
                 </div>
             </div>
         </div>
@@ -18,7 +18,11 @@
 
 <script>
 export default {
-    
+    computed:{
+        notice(){
+            return this.$store.getters.getNotice(this.$route.params.idnotice)
+        }
+    }
 }
 </script>
 

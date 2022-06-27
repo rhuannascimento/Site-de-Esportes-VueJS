@@ -5,7 +5,7 @@
         </div>
 
         <div class="col-9">
-            <h2 @click="goToPage('/notice')" >{{newsTitle}}</h2>
+            <h2 @click="goToPage(`/news/${newsId}`)" >{{newsTitle}}</h2>
             <p>
                 {{newsContent}}
             </p>
@@ -17,6 +17,10 @@
 <script>
 export default {
     props:{
+        newsId:{
+            type: Number,
+            required: true
+        },
         imgName:{
             type: String,
             required: true
