@@ -5,7 +5,8 @@
         </div>
 
         <div class="col-9">
-            <h2 @click="goToPage(`/news/${newsId}`)" >{{newsTitle}}</h2>
+            <!-- <h2 @click="goToPage(`/news/${newsId}`)" >{{newsTitle}}</h2>-->
+            <router-link :to="{name: 'notices', params: {idnotice: newsId} }"><h2>{{newsTitle}}</h2></router-link>
             <p>
                 {{newsContent}}
             </p>
@@ -41,12 +42,12 @@ export default {
             type:String,
             required: true
         }
-    },
-    methods:{
+    }
+    /*methods:{
         goToPage(page){
             this.$router.push(page);
         }
-    }
+    }*/
 
 }
 </script>
