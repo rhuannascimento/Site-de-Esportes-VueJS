@@ -22,6 +22,17 @@ export default {
         notice(){
             return this.$store.getters.getNotice(this.$route.params.idnotice)
         }
+    },
+    beforeRouteEnter:(to, from, next) => {
+    
+        let params = to.params;
+
+        if(!parseInt(params.idnotice) > 0){
+            next('/');
+        }
+
+        next();
+
     }
 }
 </script>

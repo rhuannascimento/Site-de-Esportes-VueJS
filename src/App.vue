@@ -1,6 +1,6 @@
 <template>
-    <NascHeader @select-championship="changeChampionship" @change-component="changeComponent"/>
-    <NascSection :championship="championship"/>
+    <NascHeader @select-championship="changeChampionship"/>
+    <NascSection/>
     <NascFooter/>
 </template>
 
