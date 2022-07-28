@@ -1,5 +1,7 @@
 # nasc-futebol-club
 
+ - Este site foi feito com o conhecimento adiquirido no curso de VueJS disponibilazado pela Hcode Treinamentos.
+
 ## Project setup
 ```
 npm install
